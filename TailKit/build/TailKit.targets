@@ -1,0 +1,28 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TailKitAssetsFilePath>$(MSBuildThisFileDirectory)..\wwwroot\assets\**\*.*</TailKitAssetsFilePath>
+    <TailKitViewsFilePath>$(MSBuildThisFileDirectory)..\Views\**\*.*</TailKitViewsFilePath>
+  </PropertyGroup>
+
+  <Target Name="CopyTailKitAssets" BeforeTargets="Build">
+    <ItemGroup>
+      <CleanAssetFiles Include="$(TailKitAssetsFilePath)" />
+    </ItemGroup>
+    <Message Text="Copying Clean Asset files: $(CleanAssetFilesPath) - #@(CleanAssetFiles->Count()) files"  Importance="high" />
+    <Copy
+        SourceFiles="@(CleanAssetFiles)"
+        DestinationFiles="@(CleanAssetFiles->'$(MSBuildProjectDirectory)\wwwroot\assets\%(RecursiveDir)%(Filename)%(Extension)')"
+        SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="CopyTailKitViews" BeforeTargets="Build">
+    <ItemGroup>
+      <TailKitViewsFiles Include="$(TailKitViewsFilePath)" />
+    </ItemGroup>
+    <Message Text="Copying Clean Views files: $(TailKitViewsFilesPath) - #@(TailKitViewsFiles->Count()) files"  Importance="high" />
+    <Copy
+      SourceFiles="@(TailKitViewsFiles)"
+      DestinationFiles="@(TailKitViewsFiles->'$(MSBuildProjectDirectory)\Views\%(RecursiveDir)%(Filename)%(Extension)')"
+      SkipUnchangedFiles="true" />
+  </Target>  
+</Project>
