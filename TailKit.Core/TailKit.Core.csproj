@@ -1,9 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFramework>net5.0</TargetFramework>
-	</PropertyGroup>
+  <PropertyGroup>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <Version>1.0.0</Version>
+    <InformationalVersion>1.0.0</InformationalVersion>
+    <TargetFramework>net5.0</TargetFramework>
+    <Authors>Sjoerd Stottelaar</Authors>
+    <ContentTargetFolders>.</ContentTargetFolders>
+    <Product>TailKit.Core</Product>
+    <PackageId>TailKit.Core</PackageId>
+    <Title>TailKit.Core</Title>
+    <Description>Core Library for the TailKit package for Umbraco</Description>
+    <PackageTags>umbraco plugin package starter kit TailKit core library</PackageTags>
+    <PackageProjectUrl>https://github.com/sstottelaar/tailkit</PackageProjectUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageIconUrl>https://raw.githubusercontent.com/sstottelaar/tailkit/master/images/logo.svg</PackageIconUrl>
+    <RepositoryUrl>https://github.com/sstottelaar/tailkit</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Umbraco.Cms.Web.Website" Version="9.1.2" />
-	</ItemGroup>
+  <ItemGroup>
+	<PackageReference Include="Umbraco.Cms.Web.Website" Version="9.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../images/logo.png" Pack="true" PackPath="\" />
+  </ItemGroup>
 </Project>
