@@ -1,3 +1,5 @@
+<img src="images/logo.svg" alt="drawing" width="200"/>
+
 # TailKit
 
 > Starter kit for Umbraco
